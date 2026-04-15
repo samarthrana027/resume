@@ -5,187 +5,142 @@ import streamlit as st
 # -----------------------------
 
 st.set_page_config(
-    page_title="Professional Resume UI",
+    page_title="Professional Resume",
     page_icon="📄",
     layout="wide"
 )
 
 # -----------------------------
-# Custom CSS to match resume style
+# Custom CSS
 # -----------------------------
 
-st.markdown(
-    """
-    <style>
-    .left-panel {
-        background-color: #2F3E4E;
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        height: 100%;
-    }
-    .right-panel {
-        background-color: #F7F7F7;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .section-title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+<style>
+.left-panel {
+    background-color: #2F3E4E;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.right-panel {
+    background-color: #F7F7F7;
+    padding: 20px;
+    border-radius: 10px;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # -----------------------------
-# Input Fields (Editable Resume)
+# Title
 # -----------------------------
 
-st.title("Resume Builder — Professional Layout")
+st.title("My Resume")
+
+# -----------------------------
+# Layout
+# -----------------------------
 
 col_left, col_right = st.columns([1, 2])
+
+# -----------------------------
+# LEFT PANEL
+# -----------------------------
 
 with col_left:
 
     st.markdown('<div class="left-panel">', unsafe_allow_html=True)
 
-    photo = st.file_uploader("Upload Profile Photo", type=["jpg", "png", "jpeg"])
-
-    if photo:
-        st.image(photo, width=150)
-
-    st.markdown("### Contact")
-
-    email = st.text_input("Email", "samarthrana148@gmail.com")
-    phone = st.text_input("Phone", "+91 9726995988")
-    address = st.text_input("Address", "Globcon Splendora, Pal")
-
-    st.markdown("### Education")
-
-    education1 = st.text_input(
-        "Degree",
-        "B.E. Computer Engineering — C.K. Pithawala College"
+    st.image(
+        "sam photo.jpg",  # put your image file in same folder
+        width=150
     )
 
-    education2 = st.text_input(
-        "12th",
-        "Shri Swaminarayan Mission School"
-    )
+    st.markdown("## Contact")
 
-    education3 = st.text_input(
-        "10th",
-        "Shri Swaminarayan Mission School"
-    )
+    st.write("Email: samarthrana148@gmail.com")
+    st.write("Phone: +91 9726995988")
+    st.write("Address: Globcon Splendora, Pal")
 
-    st.markdown("### Skills")
+    st.markdown("## Education")
 
-    skills = st.text_area(
-        "Skills",
-        "Designing & Graphics, Social media marketing, Product development lifecycle, Video Editing, Knowledge about Gemology"
-    )
+    st.write("B.E. Computer Engineering")
+    st.write("C.K. Pithawala College")
+    st.write("2024–2025 (Present)")
 
-    st.markdown("### Languages")
+    st.write("12th Completed")
+    st.write("Shri Swaminarayan Mission School")
+    st.write("2023–2024")
 
-    languages = st.text_area(
-        "Languages",
-        "English, Hindi, Gujarati"
-    )
+    st.write("10th Completed")
+    st.write("Shri Swaminarayan Mission School")
+    st.write("2021–2022")
+
+    st.markdown("## Skills")
+
+    st.write("Designing & Graphics")
+    st.write("Social Media Marketing")
+    st.write("Product Development Lifecycle")
+    st.write("Video Editing")
+    st.write("Knowledge about Gemology")
+
+    st.markdown("## Languages")
+
+    st.write("English")
+    st.write("Hindi")
+    st.write("Gujarati")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
+# -----------------------------
+# RIGHT PANEL
+# -----------------------------
 
 with col_right:
 
     st.markdown('<div class="right-panel">', unsafe_allow_html=True)
 
-    name = st.text_input("Full Name", "Samarth Rana")
+    st.header("Samarth Rana")
 
-    title = st.text_input(
-        "Professional Title",
-        "Student at C.K. Pithawala College, Surat"
+    st.write("Student at C.K. Pithawala College, Surat")
+
+    st.markdown("## About Me")
+
+    st.write(
+        "As a student I am doing Computer Engineering at C.K. "
+        "Pithawala College, Surat. I am learning new things and "
+        "doing amazing projects and gaining knowledge about "
+        "computer engineering."
     )
 
-    st.markdown('<div class="section-title">About Me</div>', unsafe_allow_html=True)
+    st.markdown("## Work Experience")
 
-    about = st.text_area(
-        "About",
-        "As a student I am doing Computer Engineering at C.K. Pithawala College, Surat. I am learning new things and doing amazing projects and gaining knowledge about computer engineering."
-    )
+    st.write("Internships (2024–2025 Present)")
+    st.write("• Connected labs working on coding, testing, or hardware tasks")
+    st.write("• Services to small businesses")
+    st.write("• Teaching at tuition classes")
 
-    st.markdown('<div class="section-title">Work Experience</div>', unsafe_allow_html=True)
+    st.markdown("## Training & Certifications")
 
-    experience = st.text_area(
-        "Experience",
-        "Internships: Connected labs working on coding, testing, or hardware tasks. Services to small businesses. Teaching at tuition classes."
-    )
+    st.write("AI and ML Basics — Infosys Platform")
+    st.write("Natural Programming Language")
+    st.write("Workshop on AI and ML Booming in Market")
 
-    st.markdown('<div class="section-title">Training & Certifications</div>', unsafe_allow_html=True)
+    st.markdown("## Hobbies")
 
-    training = st.text_area(
-        "Training",
-        "AI and ML Basics — Infosys Platform. Natural Programming Language. Workshop on AI and ML Booming in Market."
-    )
+    st.write("Reading")
+    st.write("Playing Cricket")
+    st.write("Travelling")
+    st.write("Video Editing")
+    st.write("Exploring new places")
 
-    st.markdown('<div class="section-title">Hobbies</div>', unsafe_allow_html=True)
+    st.markdown("## Awards")
 
-    hobbies = st.text_area(
-        "Hobbies",
-        "Reading, Playing Cricket, Travelling, Video Editing, Exploring new places"
-    )
-
-    st.markdown('<div class="section-title">Awards</div>', unsafe_allow_html=True)
-
-    awards = st.text_area(
-        "Awards",
-        "3rd Rank in Essay Competition held by ONGC, Surat. 3rd Rank in Techfest Bidding Wars."
-    )
+    st.write("3rd Rank in Essay Competition held by ONGC, Surat")
+    st.write("3rd Rank in Techfest Bidding Wars")
 
     st.markdown('</div>', unsafe_allow_html=True)
-
-# -----------------------------
-# Preview Button
-# -----------------------------
-
-st.markdown("---")
-
-if st.button("Generate Resume Preview", use_container_width=True):
-
-    st.success("Resume Layout Generated Successfully")
-
-    preview_left, preview_right = st.columns([1, 2])
-
-    with preview_left:
-        if photo:
-            st.image(photo, width=150)
-
-        st.markdown("### Contact")
-        st.write(email)
-        st.write(phone)
-        st.write(address)
-
-        st.markdown("### Skills")
-        st.write(skills)
-
-        st.markdown("### Languages")
-        st.write(languages)
-
-    with preview_right:
-        st.header(name)
-        st.write(title)
-
-        st.markdown("### About Me")
-        st.write(about)
-
-        st.markdown("### Work Experience")
-        st.write(experience)
-
-        st.markdown("### Training & Certifications")
-        st.write(training)
-
-        st.markdown("### Hobbies")
-        st.write(hobbies)
-
-        st.markdown("### Awards")
-        st.write(awards)
