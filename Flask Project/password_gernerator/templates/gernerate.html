@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Password</title>
+</head>
+<body>
+
+    <h1>Generate Password</h1>
+
+    <form method="POST">
+
+        <label>Password Length:</label>
+        <input type="number" name="length" min="4" max="30" required>
+        <br><br>
+
+        <input type="checkbox" name="uppercase">
+        <label>Include Uppercase Letters</label>
+        <br><br>
+
+        <input type="checkbox" name="numbers">
+        <label>Include Numbers</label>
+        <br><br>
+
+        <input type="checkbox" name="symbols">
+        <label>Include Symbols</label>
+        <br><br>
+
+        <button type="submit">Generate</button>
+
+    </form>
+
+    {% if password %}
+        <h2>Generated Password:</h2>
+        <p>{{ password }}</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back</a>
+
+</body>
+</html>
