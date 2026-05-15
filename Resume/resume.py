@@ -158,6 +158,12 @@ with col_right:
         <p>An interactive data application built with Streamlit, demonstrating the ability to create user-friendly data dashboards and UIs in Python.</p>
         <a href="https://github.com/samarthrana027/resume/tree/68e282e218be50c6ab21c4a1f30553904bf0455f/Streamlit%20Project" target="_blank">🔗 View on GitHub</a>
     </div>
+
+    <div class="project-card">
+        <h4>🤖 My Chatbot</h4>
+        <p>A chatbot application built in Python, showcasing conversational AI capabilities and natural language interaction design.</p>
+        <a href="https://github.com/samarthrana027/my-chatbot" target="_blank">🔗 View on GitHub</a>
+    </div>
     """, unsafe_allow_html=True)
 
     st.markdown("## Hobbies")
